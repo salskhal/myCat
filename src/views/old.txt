@@ -1,0 +1,79 @@
+
+This is the old home page
+
+<!-- <script setup>
+import { computed, onMounted, ref } from "@vue/runtime-core";
+const cats = ref([]);
+const isLoading = ref(true)
+
+onMounted(() => {
+  let API_KEY = "7c306308-15a5-45c8-9f7f-d215f10ddf53";
+  fetch(`https://api.thecatapi.com/v1/breeds?api_key=${API_KEY}`)
+    .then((res) => res.json())
+    .then((result) => {
+      cats.value = result
+      isLoading.value = false
+    });
+});
+
+const selectedCats = computed(() => {
+  return cats.value.filter(el => el.image)
+})
+
+</script>
+
+<template>
+  <div>
+    <h1>This is the home page</h1>
+    <div v-if="isLoading">loading...</div>
+
+    <div v-for="cat in selectedCats" :key="cat.id" v-else>
+    <router-link :to="{ name: 'CatDets', params: { id: cat.name } }" :id="cat.name">
+      <h1 class="font-bold">
+        {{ cat.name }}
+      </h1>
+    </router-link>
+      <p>
+        {{cat.description}}
+      </p>
+    </div>
+  </div>
+</template> -->
+
+
+
+
+This this the cat details
+
+<!-- <template>
+  <h1></h1>
+  <div v-if="isLoading">loading......</div>
+  <div v-else>
+    <p>{{ show.name }}</p>
+    <img :src="imgUrl + show.reference_image_id + imageEx" alt="" >
+  </div>
+</template>
+
+<script setup>
+import { onMounted, ref } from "@vue/runtime-core";
+
+const props = defineProps({
+  id: { type: String },
+});
+
+let imgUrl = ref("https://cdn2.thecatapi.com/images/");
+let show = ref({});
+let isLoading = ref(true);
+
+let imageEx = ref(".jpg")
+
+fetch(`https://api.thecatapi.com/v1/breeds/search?q=${props.id}`)
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+    show.value = result[0];
+    isLoading.value = false;
+  });
+</script>
+
+<style></style> -->
