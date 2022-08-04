@@ -27,7 +27,8 @@ module.exports = {
 
         // Complex site-specific column configuration
         'footer': '200px minmax(900px, 1fr) 100px',
-        "4": "repeat(4, 1fr)"
+        "4": "repeat(4, 1fr)",
+        "2/3": "1fr 2fr"
       },
       gridTemplateRows: {
         // Simple 8 row grid
