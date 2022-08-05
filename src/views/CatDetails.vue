@@ -1,10 +1,12 @@
 <template>
   
     <Loader v-if="isLoading" />
+    
     <div v-else class="grid lg:grid-cols-2/3 mt-10 gap-16 lg:px-11 ">
+        
         <img
           :src="imgUrl + selected.reference_image_id + imageExtention"
-          alt=""
+          alt="Image not found"
           class="rounded-xl w-full h-96"
         />
       <div>
@@ -19,6 +21,24 @@
         <div class="mb-4">
           <p><span class="font-bold">Life Span:</span> {{ selected.life_span }}</p>
         </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Adaptability:</span> {{selected.adaptability}} / 5</p>
+        </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Affection Level:</span> {{selected.affection_level}} / 5</p>
+        </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Child Friendly:</span> {{selected.child_friendly}} / 5</p>
+        </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Energy Level:</span> {{selected.energy_level}} / 5</p>
+        </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Intelligence:</span> {{selected.intelligence}} / 5</p>
+        </div>
+        <div class="mb-4">
+          <p><span class="font-bold">Health Issues:</span> {{selected.health_issues}} / 5</p>
+        </div>
       </div>
     </div>
   
@@ -27,6 +47,7 @@
 <script setup>
 import { ref } from "@vue/reactivity";
 import Loader from "../components/Loader.vue";
+import Progress from "../components/Progress.vue"
 
 const props = defineProps({
   id: { type: String },
